@@ -1,0 +1,77 @@
+[
+    {
+        "name": "Embracing a Patient-Centered Mindset",
+        "path": "/embracing",
+        "iframe_src": "path/to/Embracing a Patient-Centered Mindset.docx"
+    },
+    {
+        "name": "Creating an Effective Health Care Team",
+        "path": "/creating",
+        "iframe_src": "path/to/Creating an Effective Health Care Team.docx"
+    },
+    {
+        "name": "Shared Decision Making",
+        "path": "/shared_decision_making",
+        "iframe_src": "path/to/Shared Decision Making.docx"
+    },
+    {
+        "name": "Your Personal Support Network",
+        "path": "/your_personal_support_network",
+        "iframe_src": "path/to/Your Personal Support Network.docx"
+    },
+    {
+        "name": "Finding a Therapist and Developing a Positive Therapeutic Relationship",
+        "path": "/therapist",
+        "iframe_src": "path/to/Finding a Therapist and Developing a Positive Therapeutic Relationship.docx"
+    },
+    {
+        "name": "Planning for a Health Care Appointment",
+        "path": "/planning_for_a_health_care_appointment",
+        "iframe_src": "path/to/Planning for a Health Care Appointment.docx"
+    },
+    {
+        "name": "Advocating for yourself in primary care",
+        "path": "/advocating_for_yourself_in_primary_care",
+        "iframe_src": "path/to/Advocating for yourself in primary care.docx"
+    },
+    {
+        "name": "Preparing for surgery",
+        "path": "/preparing_for_surgery",
+        "iframe_src": "path/to/Preparing for surgery.docx"
+    },
+    {
+        "name": "Understanding hospitalization",
+        "path": "/understanding_hospitalization",
+        "iframe_src": "path/to/Understanding hospitalization.docx"
+    },
+    {
+        "name": "Utilizing free clinics and community health centers",
+        "path": "/utilizing_free_clinics_and_community_health_centers",
+        "iframe_src": "path/to/Utilizing free clinics and community health centers.docx"
+    },
+    {
+        "name": "Supporting Health Care Self-Advocacy in Children, and Advocating on their behalf",
+        "path": "/supporting_health_care_self_advocacy_in_children_and_advocating_on_their_behalf",
+        "iframe_src": "path/to/Supporting Health Care Self-Advocacy in Children, and Advocating on their behalf.docx"
+    },
+    {
+        "name": "Understanding Your Health Insurance",
+        "path": "/understanding_your_health_insurance",
+        "iframe_src": "path/to/Understanding Your Health Insurance.docx"
+    },
+    {
+        "name": "Understanding Your Insurance Policy",
+        "path": "/understanding_your_insurance_policy",
+        "iframe_src": "path/to/Understanding Your Insurance Policy.docx"
+    },
+    {
+        "name": "Navigating an Insurance Claim",
+        "path": "/navigating_an_insurance_claim",
+        "iframe_src": "path/to/Navigating an Insurance Claim.docx"
+    },
+    {
+        "name": "Understanding and Negotiating Medical Bills",
+        "path": "/understanding_and_negotiating_medical_bills",
+        "iframe_src": "path/to/Understanding and Negotiating Medical Bills.docx"
+    }
+]

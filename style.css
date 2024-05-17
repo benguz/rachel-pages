@@ -3,16 +3,42 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 70%;
+    flex-direction: column;
+    width: 80%;
     margin-top: 2em;
+}
+
+.move {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+a:first-child {
+    text-align: right;
+}
+
+@media screen and (max-width: 1023px){
+    .move {
+        flex-direction: column
+    }
+    .nav {
+        width: 98%
+    }
+    a {
+        text-align: center;
+    }
 }
 
 .nav a  {
     text-decoration: none;
     margin-right: 2px;
+    flex: 1;
     color: black;
     cursor: pointer;
-    font-family: 'Lora'
+    font-family: 'Lora';
+    font-size: 14pt
 }
 
 .nav a:hover {

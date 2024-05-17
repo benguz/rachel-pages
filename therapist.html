@@ -10,7 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap&family=Inter&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <style>
 
@@ -20,14 +20,26 @@
 }
   }
     </style>
+    <link rel="stylesheet" href="style.css">
 
   </head> 
   <body style="background-color: #ffffff;">
 
-    <div style="display: flex; justify-content: center; margin-top: 2em; overflow: hidden;" >
-    <iframe class="container" id="iframe" style="font-size: 1.125rem; text-align: center; border-width: 0px; border-style: none;" 
-    width="620em" max-width="calc(100% - 10em)" height="6000em" src=""></iframe>
+    <div class="nav">
+        <a href="/index.html">Home&nbsp;&nbsp;</a>
+        <div class="move">
+            <a href="/index.html" id="prev">Prev&nbsp;&nbsp;</a>
+            <a href="/index.html" id="next">Next</a>
+        </div>
+     </div>
+     <div style="display: flex; justify-content: center; overflow: hidden; max-width: 100%;" >
+        <iframe class="container" id="iframe" style="font-size: 1.125rem; text-align: center; border-width: 0px; border-style: none;" 
+    width="620em" max-width="calc(100% - 10em)" height="12000em" 
+    src="https://docs.google.com/document/d/e/2PACX-1vQyO8Pbxfdoe8Sx--UPrdrHjOBx9TJFV43Hri_2RrXGydbYBviatHEDHkPOnO7Gy5xT7WQDc3dV5VQn/pub?embedded=true"></iframe>
+
     </div>
+    <script src="script.js"> </script>
+
 
   </body>
 </html>

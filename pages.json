@@ -11,47 +11,47 @@
     },
     {
         "name": "Shared Decision Making",
-        "path": "/shared_decision_making",
+        "path": "/decisionmaking",
         "iframe_src": "path/to/Shared Decision Making.docx"
     },
     {
         "name": "Your Personal Support Network",
-        "path": "/your_personal_support_network",
+        "path": "/support",
         "iframe_src": "path/to/Your Personal Support Network.docx"
     },
     {
-        "name": "Finding a Therapist and Developing a Positive Therapeutic Relationship",
+        "name": "Finding a Therapist",
         "path": "/therapist",
         "iframe_src": "path/to/Finding a Therapist and Developing a Positive Therapeutic Relationship.docx"
     },
     {
         "name": "Planning for a Health Care Appointment",
-        "path": "/planning_for_a_health_care_appointment",
+        "path": "/planning",
         "iframe_src": "path/to/Planning for a Health Care Appointment.docx"
     },
     {
         "name": "Advocating for yourself in primary care",
-        "path": "/advocating_for_yourself_in_primary_care",
+        "path": "/advocating",
         "iframe_src": "path/to/Advocating for yourself in primary care.docx"
     },
     {
         "name": "Preparing for surgery",
-        "path": "/preparing_for_surgery",
+        "path": "/surgery",
         "iframe_src": "path/to/Preparing for surgery.docx"
     },
     {
         "name": "Understanding hospitalization",
-        "path": "/understanding_hospitalization",
+        "path": "/hospitalization",
         "iframe_src": "path/to/Understanding hospitalization.docx"
     },
     {
         "name": "Utilizing free clinics and community health centers",
-        "path": "/utilizing_free_clinics_and_community_health_centers",
+        "path": "/communityhealth",
         "iframe_src": "path/to/Utilizing free clinics and community health centers.docx"
     },
     {
-        "name": "Supporting Health Care Self-Advocacy in Children, and Advocating on their behalf",
-        "path": "/supporting_health_care_self_advocacy_in_children_and_advocating_on_their_behalf",
+        "name": "Supporting Health Care Self-Advocacy in Children",
+        "path": "/children",
         "iframe_src": "path/to/Supporting Health Care Self-Advocacy in Children, and Advocating on their behalf.docx"
     },
     {

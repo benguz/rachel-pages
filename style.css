@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 60%;
+    width: 68%;
     margin-top: 2em;
 }
 
@@ -42,7 +42,7 @@
       transform: rotate(360deg);
     }
   }
-  
+
 @media screen and (max-width: 1023px){
     .move {
         flex-direction: column

@@ -56,22 +56,22 @@
     },
     {
         "name": "Understanding Your Health Insurance",
-        "path": "/understanding_your_health_insurance",
+        "path": "/insurance",
         "iframe_src": "path/to/Understanding Your Health Insurance.docx"
     },
     {
         "name": "Understanding Your Insurance Policy",
-        "path": "/understanding_your_insurance_policy",
+        "path": "/policy",
         "iframe_src": "path/to/Understanding Your Insurance Policy.docx"
     },
     {
         "name": "Navigating an Insurance Claim",
-        "path": "/navigating_an_insurance_claim",
+        "path": "/claims",
         "iframe_src": "path/to/Navigating an Insurance Claim.docx"
     },
     {
         "name": "Understanding and Negotiating Medical Bills",
-        "path": "/understanding_and_negotiating_medical_bills",
+        "path": "/medicalbills",
         "iframe_src": "path/to/Understanding and Negotiating Medical Bills.docx"
     }
 ]

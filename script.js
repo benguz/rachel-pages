@@ -1,3 +1,11 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const loadingIcon = document.getElementById('loading-icon');
+  
+    setTimeout(() => {
+      loadingIcon.style.display = 'none';
+    }, 800);
+  });
+
 async function fetchPages() {
     try {
         const response = await fetch('./pages.json');
@@ -42,14 +50,21 @@ function updateNavElements(prev, next) {
         prevElement.href = prev.path
     } else {
         prevElement.textContent = '';
+        nextElement.style.width = '100%';
+        nextElement.style.textAlign = 'center';
+        prevElement.remove();
     }
 
     if (next) {
         nextElement.textContent = `${next.name} →`;
-        nextElement.href = prev.path
+        nextElement.href = next.path;
 
     } else {
         nextElement.textContent = '';
+        prevElement.style.width = '100%';
+        prevElement.style.textAlign = 'center';
+        nextElement.remove();
+
     }
 }
 

@@ -84,7 +84,10 @@
             width: 400px;
             max-width: 97%;
             margin-bottom: 3px;
+          display: flex;
         }
+      
+
 
         input {
             width: 100%;
@@ -94,11 +97,15 @@
             font-size: 16px;
             transition: border-color 0.3s;
         }
-
+    
         input:focus {
             border-color: #007bff;
             outline: none;
         }
+        input:focus-within { 
+  outline: 1px solid #007bff
+}
+
 
         .submit-arrow {
             position: absolute;
@@ -188,6 +195,7 @@ input {
     }
     .input-container {
         width: 97%;
+      
 
     }
     input {
@@ -222,9 +230,7 @@ input {
 }
 
       .input-container button { 
-            position: absolute; 
-            top: 0; 
-            right: 0; 
+        
             border: none; 
             background-color: transparent; 
             cursor: pointer; 

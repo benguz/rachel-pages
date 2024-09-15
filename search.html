@@ -488,6 +488,7 @@ input {
                         if (resourceMap[data]) {
                           document.getElementById("onboarding-survey").classList.add("searchresults")
                       let searchResults = document.getElementById("search-results");
+                          searchResults.innerHTML = '';
                             let links = resourceMap[data].links;
                             let descriptions = resourceMap[data].descriptions;
                             let titles = resourceMap[data].titles;
@@ -529,7 +530,13 @@ input {
                             // Append the created div to the search-results div
                             searchResults.appendChild(div);
                           }
-                          }
+                          } else {
+                          let searchResults = document.getElementById("search-results");
+                          searchResults.innerHTML = '';
+                            let wrapper = document.createElement("p");
+                            wrapper.textContent = "no results for this search yet, try another one!";
+                            searchResults.appendChild(wrapper);
+                        }
 
                         // if (data.charAt(0) === '/') {   
                             // if (isSafari) {

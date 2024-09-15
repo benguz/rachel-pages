@@ -324,6 +324,11 @@ input {
             cursor: pointer; 
         } 
 
+    .searchresults {
+      top: 0.5em;
+      left: 0.5em;
+    }
+
 /* Define the animation for fading in and fading out */
 @keyframes fade-in-out {
   0% {
@@ -350,7 +355,7 @@ input {
     
               <div id="icon-container"></div>
               <div id="onboarding-survey" style="z-index: 2; position: absolute; background-color: white;"> 
-            <h2>Find endless resources for supporting AYAs</h2>
+            <h2>AYAaccess Network: Resources for Professionals</h2>
             <p class="balance" style="margin-top: 0">step-by-step solutions, connections to community partners, and curated resources</p>
             <div class="input-container">
                 <input id="input-field" type="text" placeholder="fertility preservation">
@@ -363,8 +368,8 @@ input {
             <div style="display: flex; flex-direction: row; justify-content: center; "> 
 <!--               position: absolute; bottom: 0.5em; left: 0.5em; -->
                 <p class="onboarding-choice pale" style="border-radius: 5px; cursor: pointer;" id="policy" onclick="window.open('/communityhealth.html')">community health</p>
-                <p class="onboarding-choice light" style="border-radius: 5px; cursor: pointer;" id="policy" onclick="window.open('/index.html')">professional development</p>
-                <p class="onboarding-choice green " style="border-radius: 5px; cursor: pointer;" id="policy" onclick="window.open('https://uncaya.org/what-we-do/im-a-patient/')">AYA support groups</p>
+                <p class="onboarding-choice light" style="border-radius: 5px; cursor: pointer;" id="policy" onclick="window.open('/index.html')">healthcare basics</p>
+                <p class="onboarding-choice green " style="border-radius: 5px; cursor: pointer;" id="policy" onclick="window.open('https://uncaya.org/what-we-do/im-a-patient/')">support for patients</p>
             </div>
             
 
@@ -373,12 +378,46 @@ input {
             <div class="lds-roller" id="openAI-loading" style="display: none; z-index: 10; margin: auto;"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 
             <br><br><br><br>
+            <div id="search-results"></div>
+
         </div>
         <p class="credit" style="margin-bottom: 0" >a prototype for <a href="https://ayacc.net/" style="text-decoration: underline; color: gray">AYACC</a></p>
         
         <script>
             const placeholders = ["social support in Dallas", "magazines for AYAs", "professional groups in San Diego", "hospitals with AYA programs"];
             let currentIndex =  Math.floor(Math.random() * (placeholders.length - 1));
+
+            let resourceMap = {
+              magazines: {
+                links: ["elephantsandtea.org"],
+                descriptions: ["the only magazine written for and by the AYA cancer community telling their story in their own words."]
+              },
+              peers: {
+                links: ["b-present.org/young-adult-cancer-supporter-roadmap", "imermanangels.org/find-mentor-angel"],
+                descriptions: ["descriptions"]
+              },
+              professionaldev: {
+                links: ["lls.org/professional-education-webcasts/full-picture-aya-cancer", "teencanceramerica.org/monthly-drip"],
+                
+              },
+              activities: {
+                links: ["firstdescents.org"],
+                descriptions: [],
+              },
+              ncactivities: {
+                links: ["firstdescents.org/program/smoky-mountains-north-carolina-onc", "elephantsandtea.org/programs-and-events/", "uncaya.org/what-we-do/im-a-patient/", "imermanangels.org/find-mentor-angel/", "www.dukehealth.org/treatments/cancer/teen-and-young-adult-cancer-care"],
+                descriptions: ["First Descents provides life-changing outdoor adventures for young adults impacted by cancer and other serious health conditions, including an upcoming whitewater rafting event in North Carolina!", "Elephants and Tea is an AYA magazine that frequently hosts events for AYAs in North Carolina and nationwide.", "UNC's AYA cancer program hosts symposiums, provides resources and help lines, and supports families through the financial and legal challenges of care.", "Get one-on-one support from a cancer patient or survivor who has a similar experience.", "Duke's AYA program provides personalized cancer support, including fertility preservation, sexual health support, self-image support, and in-person meetups." ],
+              },
+              supportgroups: {
+                links: ["sharp.com/health-classes/young-cancer-patients-support-groups-68", "uncaya.org/what-we-do/im-a-patient/"],
+                descriptions: []
+              },
+              basics: {
+                links: ["triagecancer.org/cancer-resources-and-educational-information", "basics.rachelwestlake.com"],
+                descriptions: [],
+              
+              }
+            };
     
             function updatePlaceholder() {
                 const input = document.getElementById('input-field');
@@ -412,16 +451,49 @@ input {
                     .then(data => {
                         document.getElementById("openAI-loading").style.display = "none";
                         console.log(data);
-                        // if (data.charAt(0) === '/') {   
-                            if (isSafari) {
-                                // windowReference.location = 'https://fix.school' + data;
-                                console.log("safari")
-                                window.location.href = 'https://' + data
-                                // window.location.href = 'https://fix.school' + data;
-                            } else {
-                                // window.open('https://fix.school' + data);
-                                window.open('https://' + data)
+                        if (resourceMap[data]) {
+                          document.getElementById("onboarding-survey").classList.add("searchresults")
+                        
+                      let searchResults = document.getElementById("search-results");
+                            let links = resourceMap[category].links;
+                            let descriptions = resourceMap[category].descriptions;
+
+                          for (let i = 0; i < links.length; i++) {
+                            // Create a new div with class 'search-output'
+                            let div = document.createElement("div");
+                            div.className = "search-output";
+                        
+                            // Create title with an a tag
+                            let title = document.createElement("p");
+                            let link = document.createElement("a");
+                            link.href = `https://${links[i]}`; // Make sure to add https:// to the link
+                            link.textContent = links[i];
+                            link.target = "_blank"; // Open link in new tab
+                            title.appendChild(link);
+                            div.appendChild(title);
+                        
+                            // Create description if it exists
+                            if (descriptions[i]) {
+                              let description = document.createElement("p");
+                              description.textContent = descriptions[i];
+                              div.appendChild(description);
                             }
+                        
+                            // Append the created div to the search-results div
+                            searchResults.appendChild(div);
+                          }
+                          }
+
+                        // if (data.charAt(0) === '/') {   
+                            // if (isSafari) {
+                                // windowReference.location = 'https://fix.school' + data;
+                                // console.log("safari")
+                                // window.location.href = 'https://' + data
+                                // window.location.href = 'https://fix.school' + data;
+                            // } else {
+                                // window.open('https://fix.school' + data);
+                            //     window.open('https://' + data)
+                            // }
                             
                         // }
                         

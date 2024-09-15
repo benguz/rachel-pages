@@ -85,7 +85,7 @@
             max-width: 97%;
             margin-bottom: 3px;
             border: 2px solid #ccc;
-            border-radius: 5px;
+            border-radius: 10px;
           display: flex;
         }
       
@@ -270,7 +270,10 @@ input {
             <div class="input-container">
                 <input id="input-field" type="text" placeholder="fertility preservation">
                 <div style="position: absolute; padding: 20px; cursor: pointer; display: inline-block; right: 4px; z-index: 3;" onclick="submitInput()"></div>
-                <button>search</button>
+                <button style="padding: 2px; " ><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M23.55 19.95L17.835 14.205C18.9224 12.6877 19.5049 10.8667 19.5 9C19.5 4.035 15.465 0 10.5 0C5.535 0 1.5 4.035 1.5 9C1.5 13.965 5.535 18 10.5 18C12.45 18 14.22 17.385 15.705 16.335L21.45 22.05C21.735 22.35 22.125 22.5 22.5 22.5C22.875 22.5 23.28 22.365 23.55 22.05C23.6891 21.9112 23.7994 21.7464 23.8746 21.5649C23.9499 21.3835 23.9887 21.189 23.9887 20.9925C23.9887 20.796 23.9499 20.6015 23.8746 20.4201C23.7994 20.2386 23.6891 20.0738 23.55 19.935V19.95ZM10.5 16.05C6.615 16.05 3.45 12.885 3.45 9C3.45 5.115 6.615 1.95 10.5 1.95C14.385 1.95 17.55 5.115 17.55 9C17.55 12.885 14.385 16.05 10.5 16.05Z" fill="black"/>
+</svg>
+</button>
             </div>
             <div style="display: flex; flex-direction: row; justify-content: center;">
                 <p class="onboarding-choice pale" style="border-radius: 5px; cursor: pointer;" id="policy" onclick="window.open('/communityhealth.html')">community health</p>

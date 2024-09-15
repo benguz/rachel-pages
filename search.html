@@ -343,7 +343,10 @@ input {
     .popups {
       display: flex; flex-direction: row; justify-content: center; 
     }
-    .searchresults .popups, .searchresults .balance, .searchresults .spacer {
+      .searchresults .popups {
+        justify-content: flex-start;
+      }
+    .searchresults .balance, .searchresults .spacer {
       display: none;
     }
     .searchresults   h2 {
@@ -388,6 +391,8 @@ input {
 </svg>
 </button>
             </div>
+                            <div id="search-results"></div>
+
             <div class="popups"> 
 <!--               position: absolute; bottom: 0.5em; left: 0.5em; -->
                 <p class="onboarding-choice pale" style="border-radius: 5px; cursor: pointer;" id="policy" onclick="window.open('/communityhealth.html')">community health</p>
@@ -401,7 +406,6 @@ input {
             <div class="lds-roller" id="openAI-loading" style="display: none; z-index: 10; margin: auto;"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 
            <div class="spacer"><br><br><br><br></div>
-            <div id="search-results"></div>
 
         </div>
         <p class="credit" style="margin-bottom: 0" >a prototype for <a href="https://ayacc.net/" style="text-decoration: underline; color: gray">AYACC</a></p>

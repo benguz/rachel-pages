@@ -330,7 +330,7 @@ input {
       text-align: left;
     }
       #search-results {
-        width: 500px;
+        width: 47vw;
         max-width: 97%; 
       }
     .searchresults .input-container {
@@ -421,24 +421,26 @@ input {
                 descriptions: ["The Supporter Roadmap is a digital guide developed by cancer supporters and survivors that understand the challenges want to help patients and supporters get off to the best start possible.", "Get one-on-one support from a cancer patient or survivor who has a similar experience."]
               },
               professionaldev: {
+                titles: ["Teen Cancer America: Monthly Drip", "AYA POWER: Program for Oncology Workforce Education and Resources", "AYA Survivorship Resources", "AYA Professional Education Webcasts"],
                 links: ["teencanceramerica.org/monthly-drip", "elephantsandtea.org/aya-power/",  "https://cancercontrol.cancer.gov/ocs/special-focus-areas/pediatric-adolescent-and-young-adult-survivorship", "lls.org/professional-education-webcasts/full-picture-aya-cancer" ],
-                descriptions: ["The Monthly Drip is a monthly webinar hosted by Teen Cancer America to provide current education on AYA related topics for healthcare professionals. This is an opportunity to share expertise, current research, AYA program development and services, etc. to impact the AYA community at large.", "The AYA POWER provides oncology trainees with high-yield education and resources to improve care delivery and outcomes, organizing live zoom events", "", ""]
+                descriptions: ["The Monthly Drip is a monthly webinar hosted by Teen Cancer America to provide current education on AYA related topics for healthcare professionals. This is an opportunity to share expertise, current research, AYA program development and services, etc. to impact the AYA community at large.", "The AYA POWER provides oncology trainees with high-yield education and resources to improve care delivery and outcomes, organizing live zoom events.", "This NIH site hosts resources, workshops, and research results with a mission of bolstering AYA survivorship", "The Leukemia and Lymphoma society hosts continuing education content on working with AYAs, taught by experts in the field."]
               },
               activities: {
                 links: ["firstdescents.org"],
                 descriptions: ["First Descents provides life-changing outdoor adventures for young adults impacted by cancer and other serious health conditions"],
               },
               ncactivities: {
+                titles: ["First Descents Whitewater Rafting, Smoky Mountains", "Elephants and Tea Programs and Events", "UNC AYA Resources", "Imerman Angels", "Duke AYA Cancer Care and Social Support"],
                 links: ["firstdescents.org/program/smoky-mountains-north-carolina-onc", "elephantsandtea.org/programs-and-events/", "uncaya.org/what-we-do/im-a-patient/", "imermanangels.org/find-mentor-angel/", "www.dukehealth.org/treatments/cancer/teen-and-young-adult-cancer-care"],
                 descriptions: ["First Descents provides life-changing outdoor adventures for young adults impacted by cancer and other serious health conditions, including an upcoming whitewater rafting event in North Carolina!", "Elephants and Tea is an AYA magazine that frequently hosts events for AYAs in North Carolina and nationwide.", "UNC's AYA cancer program hosts symposiums, provides resources and help lines, and supports families through the financial and legal challenges of care.", "Get one-on-one support from a cancer patient or survivor who has a similar experience.", "Duke's AYA program provides personalized cancer support, including fertility preservation, sexual health support, self-image support, and in-person meetups." ],
               },
               supportgroups: {
                 links: ["sharp.com/health-classes/young-cancer-patients-support-groups-68", "uncaya.org/what-we-do/im-a-patient/"],
-                descriptions: []
+                descriptions: ["", ""]
               },
               basics: {
                 links: [ "basics.rachelwestlake.com", "triagecancer.org/cancer-resources-and-educational-information"],
-                descriptions: [],
+                descriptions: ["", ""],
               }
             };
     
@@ -486,14 +488,22 @@ input {
                             div.className = "search-output";
                         
                             // Create title with an a tag
-                            let title = document.createElement("p");
+                            if (titles[i]) {
+                              let title = document.createElement("p");
+                              title.style.margin = 0;                              
+                              title.textContent = titles[i];
+                              div.appendChild(title);
+                            }
+
                             let link = document.createElement("a");
+                            let wrapper = document.createElement("p");
                             link.href = `https://${links[i]}`; // Make sure to add https:// to the link
                             link.textContent = links[i];
                             link.style.marginBottom = 0;
+                            wrapper.style.margin = 0;
                             link.target = "_blank"; // Open link in new tab
-                            title.appendChild(link);
-                            div.appendChild(title);
+                            wrapper.appendChild(link);
+                            div.appendChild(wrapper);
                         
                             // Create description if it exists
                             if (descriptions[i]) {

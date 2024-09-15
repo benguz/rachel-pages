@@ -325,20 +325,25 @@ input {
         } 
 
     .searchresults {
-      top: 0.5em;
-      left: 0.5em;
+      top: 1em;
+      left: 1em;
       text-align: left;
     }
+      #search-results {
+        width: 500px;
+        max-width: 97%; 
+      }
     .searchresults .input-container {
-      margin: none;
+      margin: 0;
     }
+      
 /*     .searchresults .notsure {
       display: none;
     } */
     .popups {
       display: flex; flex-direction: row; justify-content: center; 
     }
-    .searchresults .popups {
+    .searchresults .popups, .searchresults .balance {
       display: none;
     }
     .searchresults   h2 {
@@ -407,6 +412,7 @@ input {
 
             let resourceMap = {
               magazines: {
+                titles: ["Elephants and Tea"],
                 links: ["elephantsandtea.org"],
                 descriptions: ["the only magazine written for and by the AYA cancer community telling their story in their own words."]
               },
@@ -484,6 +490,7 @@ input {
                             let link = document.createElement("a");
                             link.href = `https://${links[i]}`; // Make sure to add https:// to the link
                             link.textContent = links[i];
+                            link.style.marginBottom = 0;
                             link.target = "_blank"; // Open link in new tab
                             title.appendChild(link);
                             div.appendChild(title);
@@ -491,6 +498,9 @@ input {
                             // Create description if it exists
                             if (descriptions[i]) {
                               let description = document.createElement("p");
+                              description.style.color = "#A9A9A9";
+                              description.style.marginTop = 0;
+                              
                               description.textContent = descriptions[i];
                               div.appendChild(description);
                             }

@@ -412,7 +412,7 @@ input {
               },
               peers: {
                 links: ["b-present.org/young-adult-cancer-supporter-roadmap", "imermanangels.org/find-mentor-angel"],
-                descriptions: ["descriptions"]
+                descriptions: ["The Supporter Roadmap is a digital guide developed by cancer supporters and survivors that understand the challenges want to help patients and supporters get off to the best start possible.", "Get one-on-one support from a cancer patient or survivor who has a similar experience."]
               },
               professionaldev: {
                 links: ["teencanceramerica.org/monthly-drip", "elephantsandtea.org/aya-power/",  "https://cancercontrol.cancer.gov/ocs/special-focus-areas/pediatric-adolescent-and-young-adult-survivorship", "lls.org/professional-education-webcasts/full-picture-aya-cancer" ],
@@ -420,7 +420,7 @@ input {
               },
               activities: {
                 links: ["firstdescents.org"],
-                descriptions: [],
+                descriptions: ["First Descents provides life-changing outdoor adventures for young adults impacted by cancer and other serious health conditions"],
               },
               ncactivities: {
                 links: ["firstdescents.org/program/smoky-mountains-north-carolina-onc", "elephantsandtea.org/programs-and-events/", "uncaya.org/what-we-do/im-a-patient/", "imermanangels.org/find-mentor-angel/", "www.dukehealth.org/treatments/cancer/teen-and-young-adult-cancer-care"],
@@ -431,9 +431,8 @@ input {
                 descriptions: []
               },
               basics: {
-                links: ["triagecancer.org/cancer-resources-and-educational-information", "basics.rachelwestlake.com"],
+                links: [ "basics.rachelwestlake.com", "triagecancer.org/cancer-resources-and-educational-information"],
                 descriptions: [],
-              
               }
             };
     
@@ -471,10 +470,9 @@ input {
                         console.log(data);
                         if (resourceMap[data]) {
                           document.getElementById("onboarding-survey").classList.add("searchresults")
-                        
                       let searchResults = document.getElementById("search-results");
-                            let links = resourceMap[category].links;
-                            let descriptions = resourceMap[category].descriptions;
+                            let links = resourceMap[data].links;
+                            let descriptions = resourceMap[data].descriptions;
 
                           for (let i = 0; i < links.length; i++) {
                             // Create a new div with class 'search-output'

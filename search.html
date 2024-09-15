@@ -311,7 +311,7 @@ input {
                     .then(data => {
                         document.getElementById("openAI-loading").style.display = "none";
                         console.log(data);
-                        if (data.charAt(0) === '/') {   
+                        // if (data.charAt(0) === '/') {   
                             if (isSafari) {
                                 // windowReference.location = 'https://fix.school' + data;
                                 console.log("safari")
@@ -322,7 +322,7 @@ input {
                                 window.open('https://' + data)
                             }
                             
-                        }
+                        // }
                         
                     })
                     .catch(error => {

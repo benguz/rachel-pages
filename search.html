@@ -207,28 +207,58 @@ input {
         box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.15);
     }
 }
+      #icon-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  font-size: 24px;
+  color: red;
+  opacity: 0;
+  animation: fade-in-out 5s ease-in-out forwards;
+}
+
+/* Define the animation for fading in and fading out */
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
     </style>
 </head>
 
 <body id="dashboard-body" >
     
-
-              <div id="onboarding-survey" style="background-color: white;"> 
-            <h2 >What do you want to learn about supporting AYAs?</h2>
-            <p class="balance">get step-by-step solutions and find community partners</p>
+              <div id="icon-container"></div>
+              <div id="onboarding-survey" style="z-index: 2; position: absolute; width: '100vw';"> 
+            <h2>Find endless resources for supporting AYAs</h2>
+            <p class="balance" style="margin-top: 0">step-by-step solutions, connections to community partners</p>
             <div class="input-container">
-                <input id="input-field" type="text" placeholder="gross bathrooms">
+                <input id="input-field" type="text" placeholder="fertility preservation">
                 <div style="position: absolute; padding: 20px; cursor: pointer; display: inline-block; right: 4px; z-index: 3;" onclick="submitInput()"></div>
-                <div class="submit-arrow"></div>
+                <button class="submit-arrow"></button>
             </div>
-<!--             <div style="display: flex; flex-direction: row; justify-content: center;">
-                <p class="onboarding-choice pale" id="policy" onclick="window.open('/school/flow')">the rules 🤬</p>
-                <p class="onboarding-choice light" id="policy" onclick="window.open('/doorstops/conflict')">other ppl 🙄</p>
-                <p class="onboarding-choice green " id="policy" onclick="window.open('/doorstops/extension')">🧠 health</p>
-            </div> -->
+            <div style="display: flex; flex-direction: row; justify-content: center;">
+                <p class="onboarding-choice pale" id="policy" onclick="window.open('/communityhealth.html')">community health</p>
+                <p class="onboarding-choice light" id="policy" onclick="window.open('/doorstops/conflict')">professional development</p>
+                <p class="onboarding-choice green " id="policy" onclick="window.open('/doorstops/extension')">AYA support groups</p>
+            </div>
             
 
-            <p class="notsure"><a href="/dashboard" style="text-decoration: underline;">fertility preservation</a></p>
+            <p class="notsure"><a href="https://www.tldraw.com/ro/lNh0FzbghpYXZYvzV78T_?d=v5136.-1267.9062.4723.page" style="text-decoration: underline; text-color: gray">I want to see a map...</a></p>
             <!-- Suggestions -->
             <div class="lds-roller" id="openAI-loading" style="display: none; margin: auto;"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 
@@ -301,8 +331,47 @@ input {
                 }
             });
         </script>
+                
 
-  <script src="/assets/js/script.js" defer></script>
+  <script>const iconContainer = document.getElementById('icon-container');
+
+// Function to generate random positions
+function getRandomPosition() {
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+  const randomX = Math.random() * vw;
+  const randomY = Math.random() * vh;
+  return { x: randomX, y: randomY };
+}
+
+// Function to create a map icon at a random position
+function createMapIcon() {
+  const icon = document.createElement('div');
+  icon.classList.add('icon');
+  icon.innerHTML = '📍'; // Red map pin icon (emoji)
+  
+  const { x, y } = getRandomPosition();
+  icon.style.left = `${x}px`;
+  icon.style.top = `${y}px`;
+
+  // Append the icon to the container
+  iconContainer.appendChild(icon);
+
+  // Remove the icon after its animation ends
+  setTimeout(() => {
+    icon.remove();
+  }, 6000); // Match with the CSS animation duration (6s)
+}
+
+// Generate icons continuously with random intervals
+function generateIconsContinuously() {
+  createMapIcon();
+  setTimeout(generateIconsContinuously, Math.random() * 2000 + 500); // Random interval between 500ms and 2500ms
+}
+
+// Start generating icons
+generateIconsContinuously();
+</script>
 </body>
 
 </html>
